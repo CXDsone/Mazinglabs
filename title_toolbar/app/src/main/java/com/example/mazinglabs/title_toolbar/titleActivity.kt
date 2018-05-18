@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.ActionBar
 import android.view.LayoutInflater
 import android.view.WindowManager
+import kotlinx.android.synthetic.main.title.*
 
 class titleActivity : AppCompatActivity() {
 
@@ -17,5 +18,9 @@ class titleActivity : AppCompatActivity() {
         val v = LayoutInflater.from(applicationContext).inflate(R.layout.title,null)
         bar.setCustomView(v, ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT))
         setContentView(R.layout.activity_title)
+
+        bt_back.setOnClickListener {
+            finish()
+        }
     }
 }
