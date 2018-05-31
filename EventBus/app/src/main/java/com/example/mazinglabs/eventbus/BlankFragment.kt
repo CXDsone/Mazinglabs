@@ -6,9 +6,10 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import kotlinx.android.synthetic.main.fragment_blank.*
 import org.greenrobot.eventbus.EventBus
+
+
 
 class BlankFragment : Fragment() {
 
@@ -22,8 +23,13 @@ class BlankFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         button.setOnClickListener {
-            var event = MyEvent()
-            EventBus.getDefault().post(event.EventUtil("发送"))
+            val eventMessage = MyEvent()
+            eventMessage.setMsg(editText.text.toString())
+            //传入String
+//            val msg = eventMessage.getMsg()
+//            EventBus.getDefault().post(msg)
+            //传入对象
+            EventBus.getDefault().postSticky(eventMessage)
         }
     }
 

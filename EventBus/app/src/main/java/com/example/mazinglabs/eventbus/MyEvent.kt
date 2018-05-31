@@ -1,10 +1,13 @@
 package com.example.mazinglabs.eventbus
 
+import android.util.Log
+
 class MyEvent {
 
     private var message: String ?= null
 
-    fun EventUtil(msg: String){
+    fun setMsg(msg: String){
+        Log.d("event" ,msg)
         message = msg
     }
 
