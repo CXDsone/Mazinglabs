@@ -12,12 +12,10 @@ import org.greenrobot.eventbus.ThreadMode
 
 class MainActivity : AppCompatActivity() {
 
-    var eventBus: EventBus? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        if (!EventBus.getDefault().hasSubscriberForEvent(MyEvent::class.java)) {
+        if (!EventBus.getDefault().hasSubscriberForEvent(MainActivity::class.java)) {
             EventBus.getDefault().register(this)
             Log.e("kotlin==注册啦","")
         }
